@@ -17,6 +17,11 @@ pipeline {
         }
     }
     post {
+        success {
+            emailext subject: "SUCCESS: Pipeline ${env.JOB_NAME}",
+                      body: "Build ${currentBuild.number} was successful.",
+                      to: 'bpnmnu@gmail.com'
+        }
         failure {
             emailext subject: 'Pipeline Failed',
                       body: 'The Jenkins pipeline build failed. Please check the build logs for details.',
