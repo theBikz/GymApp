@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nodegymapp
+data:
+  user: BIPIN
+  password: qwerty

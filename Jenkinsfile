@@ -16,4 +16,12 @@ pipeline {
             }
         }
     }
+    post {
+        failure {
+            emailext subject: 'Pipeline Failed',
+                      body: 'The Jenkins pipeline build failed. Please check the build logs for details.',
+                      to: 'bpnmnu@gmail.com',
+                      attachLog: true
+        }
+    }
 }

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nodegymapp
+  labels:
+    name: nodegymapp
+spec:
+  containers:
+  - name: nodegymapp
+    image: gym:latest
+    imagePullPolicy: Never
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 3000
