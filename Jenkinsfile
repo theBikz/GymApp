@@ -8,5 +8,12 @@ pipeline {
                 echo "successfully build"
             }
         }
+        stage("Build"){
+            steps{
+                script{
+                    sh "npm install"
+                }
+            }
+        }
     }
 }
