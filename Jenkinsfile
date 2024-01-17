@@ -11,7 +11,7 @@ pipeline {
         stage("Build"){
             steps{
                 script{
-                    sh "npm install"
+                    sh "docker run -d -p 3000:3000 gymapp"
                 }
             }
         }
