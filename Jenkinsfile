@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/theBikz/GymApp']])
-                echo "success"
+                echo "successfully build"
             }
         }
     }
