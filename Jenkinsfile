@@ -1,8 +1,8 @@
 pipeline {
     agent any
-    parameters {
-        choice(choices: ['main', 'feature'], description: 'Select the branch to build', name: 'branch')
-    }
+    // parameters {
+    //     choice(choices: ['main', 'feature'], description: 'Select the branch to build', name: 'branch')
+    // }
     // options {
     //     pipelineTriggers([githubPush()])
     // }
