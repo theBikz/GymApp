@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                checkout scmGit(branches: [['${params.branch}']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/theBikz/GymApp']])
+                //checkout scmGit(branches: [['${params.branch}']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/theBikz/GymApp']])
+                git url: 'https://github.com/theBikz/GymApp', branch: '${params.branch}'
                 echo "successfully build"
             }
         }
