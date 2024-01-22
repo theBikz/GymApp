@@ -1,15 +1,10 @@
 pipeline {
     agent any
-    parameters {
-        choice(choices: ['main', 'feature'], description: 'Select the branch to build', name: 'branch')
-    }
-    // options {
-    //     pipelineTriggers([githubPush()])
-    // }
+
     stages {
         stage('checkout') {
             steps {
-                checkout scmGit(branch: "${params.branch}", extensions: [], userRemoteConfigs: [[url: 'https://github.com/theBikz/GymApp']])
+                checkout scmGit(branches: [['${params.branch}']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/theBikz/GymApp']])
                 echo "successfully build"
             }
         }
