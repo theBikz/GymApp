@@ -7,18 +7,23 @@ pipeline {
     //     choice choices: ['main', 'feature'], description: 'Select the branch to build', name: 'branch'
     // }
     // stages{
-    //     stage('checkout'){
-    //         steps{
-    //             git branch: '$branch', url: 'https://github.com/theBikz/GymApp/'
-    //         }
-    //     }
+        // stage('checkout'){
+        //     steps{
+        //         git branch: '$branch', url: 'https://github.com/theBikz/GymApp/'
+        //     }
+        // }
     // }
     stages {
-        stage('checkout') {
-            steps {
-                //checkout scmGit(branches: [[name: '${params.branch}']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/theBikz/GymApp']])
-                checkout scmGit(branch: '${branch}', extensions: [], userRemoteConfigs: [[url: 'https://github.com/theBikz/GymApp']])
-                echo "successfully build"
+        // stage('checkout') {
+        //     steps {
+        //         //checkout scmGit(branches: [[name: '${params.branch}']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/theBikz/GymApp']])
+        //         checkout scmGit(branch: '${branch}', extensions: [], userRemoteConfigs: [[url: 'https://github.com/theBikz/GymApp']])
+        //         echo "successfully build"
+        //     }
+        // }
+        stage('checkout'){
+            steps{
+                git branch: '$branch', url: 'https://github.com/theBikz/GymApp/'
             }
         }
         stage("Build"){
