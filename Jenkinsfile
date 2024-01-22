@@ -1,7 +1,11 @@
 pipeline {
     agent any
-    properties([parameters([choice(choices: 'main\nfeature', description: 'Select the branch to build', name: 'branch')]), pipelineTriggers([githubPush()])])
-
+    parameters {
+        choice(choices: ['main', 'feature'], description: 'Select the branch to build', name: 'branch')
+    }
+    options {
+        pipelineTriggers([githubPush()])
+    }
     stages {
         stage('checkout') {
             steps {
