@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+     parameters {
+        choice(choices: ['main', 'feature'], description: 'Select the branch to build', name: 'branch')
+    }
     stages {
         stage('checkout') {
             steps {
